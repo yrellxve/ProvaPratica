@@ -34,6 +34,10 @@
     --color-border-muted: #191f1b;
     --color-text-muted: #A4AEA6;
     --color-cursor: #E889BC;
+    --color-button-primary-bg: #08872B;
+    --color-focus: #E889BC;
+    --color-button-secondary-bg: rgba(255, 255, 255, 0.12);
+    --color-button-secondary-border: rgba(255, 255, 255, 0.6);
     --container-width: 1280px;
     --spacing-64: 64px;
     --font-mono: "Mona Sans Mono";
@@ -42,9 +46,15 @@
     --eyebrow-font-size: 14px;
     --text-200-font-size: 16px;
     --text-200-line-height: 1.5;
-
+    
     --button-font-size: 16px;
 }
+
+@media (max-width: 640px) {
+    .heading-size-1 {
+        font-size: 36px;
+    }
+} 
 
 body {
     font-family: var(--font-body);
@@ -124,33 +134,43 @@ a {
     all: unset;
 }
 
-.button-green {
-    background-color: green;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    padding: 6px 20px;
-    text-align: center;
+.button {
     text-decoration: none;
-    display: inline-block;
+    color: inherit;
+    padding: 0.6em 1.25em;
+    text-align: center;
+    font-weight: medium;
+    letter-spacing: 0.16px;
+    border-radius: 0.375em;
     font-family: var(--font-body);
     font-size: var(--button-font-size);
+    transition: background-color 300ms ease-in-out;
 }
 
-.button-black {
-    background-color: #1f1f1f;
-    border-style: 1px solid;
-    border-radius: 6px;
-    border-color: #2c2c2c;
-    color: white;
-    padding: 6px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: var(--font-body);
-    font-size: var(--button-font-size);
+.button:focus-visible {
+    outline: 4px solid var(--color-focus);
+    outline-offset: 2px;
 }
 
-a {
-    all: onset;
+.button-primary {
+    background-color: var(--color-button-primary-bg);
+    border-color: transparent;
 }
+
+.button-primary:hover {
+    background-color: color-mix(in srgb, var(--color-button-primary-bg), #000 16%);
+}
+
+.button-secondary {
+    background-color: var(--color-button-secondary-bg);
+    border-color: var(--color-button-secondary-border);
+}
+
+.button-secondary:hover {
+    background-color: color-mix(in srgb, var(--color-button-secondary-bg), #fff 6%);
+}
+
+.button-group {
+    padding-top: 28px;
+}
+
