@@ -26,7 +26,6 @@
     font-feature-settings: "liga" 0;
 }
 
-
 :root {
     --font-body: "Mona Sans";
     --color-black: #000;
@@ -39,6 +38,7 @@
     --color-button-secondary-bg: rgba(255, 255, 255, 0.12);
     --color-button-secondary-border: rgba(255, 255, 255, 0.6);
     --container-width: 1280px;
+    --hero-content-gap: 
     --spacing-64: 64px;
     --font-mono: "Mona Sans Mono";
     --heading-font-size-1: 56px;
@@ -64,7 +64,6 @@ body {
 .hero {
     --hero-text-max-width: 600px;
     --hero-content-gap: 1em;
-
     background: var(--color-black);
     color: var(--color-white);
     text-align: center;
@@ -84,6 +83,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: var(--hero-content-gap);
 }
 
 .eyebrow {
@@ -129,7 +129,6 @@ body {
     margin-top: calc(64px - var(--hero-content-gap));
 }
 
-
 a {
     all: unset;
 }
@@ -170,7 +169,8 @@ a {
     background-color: color-mix(in srgb, var(--color-button-secondary-bg), #fff 6%);
 }
 
-.button-group {
-    padding-top: 28px;
+.label-category {
+    
 }
+
 
