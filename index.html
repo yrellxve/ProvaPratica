@@ -10,10 +10,35 @@
 
 <body>
   <!-- Costruiamo qui il documento durante la lezione. -->
-  <header>
+   <a class="skip-link" href="#top">Vai al contenuto</a>
+  <header class="navigation">
+    <div class="navigation-content">
+      <div class="navigation-brand">
+        <a class="navigation-logo" href="https://github.com/education" aria-label="GitHub Education">
+          <span class="navigation-back-arrow" aria-hidden="true">‹</span>
+          <img src="assets/images/github-mark.svg" width="24" height="24" alt="" />
+        </a>
+        <a class="navigation-title" href="#top">GitHub <span>Student Stories</span></a>
+      </div>
+      <div class="navigation-menu">
+        <button class="navigation-toggle" type="button" aria-label="Menu dei capitoli" popovertarget="navigation-panel">
+          <img class="navigation-icon navigation-icon-open" src="assets/images/menu.svg" width="16" height="16" alt="" aria-hidden="true" />
+          <img class="navigation-icon navigation-icon-close" src="assets/images/close.svg" width="16" height="16" alt="" aria-hidden="true" />
+          <span class="navigation-label">Menu dei capitoli</span>
+        </button>
+        <nav id="navigation-panel" class="navigation-panel" popover="auto" aria-label="Capitoli della storia">
+          <ul class="navigation-list">
+          <li><a href="#concept"><span>Concept</span></a></li>
+          <li><a href="#sitemap"><span>Sitemap</span></a></li>
+          <li><a href="#assets"><span>Assets</span></a></li>
+          <li><a href="#prototipi"><span>Prototipi</span></a></li>
+          <li><a href="#highlights"><span>Highlights</span></a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
   </header>
-
-  <main>
+  <main id="top" tabindex="-1">
     <section class="hero">
       <div class="hero-content container">
         <p class="eyebrow"> Vallery Pioquinto · UI/UX Design · 2026
