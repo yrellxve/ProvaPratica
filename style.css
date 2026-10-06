@@ -51,6 +51,8 @@
     --heading-font-size-2: 34px;
     --heading-font-size-3: 28px;
     --heading-font-size-4: 22px;
+    --text-400-font-size: 20px;
+    --text-400-line-height: 1.3;
     --text-200-font-size: 16px;
     --text-200-line-height: 1.5;
     --text-100-font-size: 0.875em;
@@ -122,9 +124,14 @@ body {
     fill: var(--color-cursor);
 }
 
-.heading {
+.pageheading {
     font-weight: 400;
 }
+
+.heading {
+    font-weight: 500;
+
+} 
 
 .heading-font-size-1 {
     font-size: var(--heading-font-size-1);
@@ -133,6 +140,9 @@ body {
 
 .heading-font-size-2 {
     font-size: var(--heading-font-size-2);
+    text-align: center;
+    max-width: 484px;
+    line-height: 1.3;
 }
 .text-size-200 {
     font-size: var(--text-200-font-size);
@@ -245,6 +255,7 @@ a {
     font-weight: 400;
     line-height: 1.5;
     max-width: 477px;
+    letter-spacing: 0.24px;
 }
 
 .concept-description {
@@ -260,11 +271,57 @@ a {
     max-width: 751px;
 }
 
+.casestudy-intro-content {
+    max-width: 484px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: var(--spacing-24);
+}
+
+.casestudy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid var(--color-border-gray);
+    border-right: 1px solid var(--color-border-gray);
+    padding: var(--spacing-64);
+}
+
+.heading-text {
+    font-size: var(--text-400-font-size);
+    line-height: var(--text-400-line-height);
+    font-weight: 400;
+    padding-top: 20; 
+    color: #000;
+}
+
+.schede {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 360px;
+    gap: 12px;
+    padding-top: 12px;
+    border-color: transparent;
+}
+
+.scheda {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding-top: 16px;
+    border-top:#E4EBE6;
+    color: var(--color-text-muted-light-mode);
+}
+
+.scheda[aria-selected="true"] {
+    border-top: #0D6731;
+}
 
 
-
-
-
+/* test 1 */
 
 
 
