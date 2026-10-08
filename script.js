@@ -59,3 +59,37 @@ desktopMedia.addEventListener('change', function () {
   else if (desktopMedia.matches && focusOnButton) navigationPanel.querySelector('a').focus();
   else if (!desktopMedia.matches && focusInNavigation) navigationButton.focus();
 });
+
+
+
+/* ============ 4. JAVASCRIPT ============ */
+
+/* const - crea una variabile ex. const x = 5; y = 3; 
+document.querySelectorAll('.scheda') significa "cerca nella pagina tutti gli elementi con la classe scheda". Il risultato è una lista di 3 bottoni, che salvo nella scatola chiamata 'schede'.*/
+
+const schede = document.querySelectorAll('.scheda');
+const pannelli = document.querySelectorAll('.systemstudy-imagepanel');
+
+function attiva(indice) {
+  schede.forEach((scheda, i) => {
+    const scelta = (i === indice);
+    scheda.setAttribute('aria-selected', scelta);
+    scheda.tabIndex = scelta ? 0 : -1;
+  });
+  pannelli.forEach((pannello, i) => {
+    pannello.classList.toggle('active', i === indice);
+  });
+}
+
+schede.forEach((scheda, i) => {
+  scheda.addEventListener('click', () => attiva(i));
+  scheda.addEventListener('keydown', (evento) => {
+    let nuovo = null;
+    if (evento.key === 'ArrowRight') nuovo = (i + 1) % schede.length;
+    if (evento.key === 'ArrowLeft') nuovo = (i - 1 + schede.length) % schede.length;
+    if (nuovo !== null) {
+      attiva(nuovo);
+      schede[nuovo].focus();
+    }
+  });
+});
