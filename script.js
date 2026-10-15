@@ -65,7 +65,7 @@ desktopMedia.addEventListener('change', function () {
 /* ============ 4. JAVASCRIPT ============ */
 
 /* const - crea una variabile ex. const x = 5; y = 3; 
-document.querySelectorAll('.scheda') significa "cerca nella pagina tutti gli elementi con la classe scheda". Il risultato è una lista di 3 bottoni, che salvo nella scatola chiamata 'schede'.*/
+document.querySelectorAll('.scheda') significa "cerca nella pagina tutti gli elementi con la classe scheda". Il risultato è una lista di 3 bottoni, che salvo nella scatola chiamata 'schede'.
 
 const schede = document.querySelectorAll('.scheda');
 const pannelli = document.querySelectorAll('.systemstudy-imagepanel');
@@ -93,3 +93,5 @@ schede.forEach((scheda, i) => {
     }
   });
 });
+
+*/
