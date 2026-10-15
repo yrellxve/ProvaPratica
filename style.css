@@ -311,17 +311,23 @@ a {
 .concept-block-box {
     padding: var(--spacing-64);
     border: 1px solid var(--color-border-gray);
-    width: 425px;
-    margin: auto;
     justify-content: center;
 }
 
 .concept-blocks-content {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+    /*
     display: flex;
     justify-content: center;
     flex-wrap: nowrap;
     margin: auto;
 }
+    */
+
 
 
 
