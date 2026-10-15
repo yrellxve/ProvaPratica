@@ -34,7 +34,7 @@
     --color-border-gray: #E4EBE6;
     --color-text-muted: #A4AEA6;
     --color-text-muted-light-mode: #58635B;
-    --color-cursor: #E889BC;
+    --color-cursor: #08872B;
     --color-button-primary-bg: #08872B;
     --color-green-accent: #0D6731;
     --color-focus: #E889BC;
@@ -71,10 +71,8 @@
 }
 
 @media (max-width: 1000px) {
-    .concept-blocks-content {
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
+    .breakdownTabs-list {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -83,7 +81,17 @@
         font-size: 36px;
     }
 
-    .scheda {}
+    .info-bar {
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding-left: 2.6em;
+    }
+
+    .concept-blocks-content {
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
 
 
@@ -98,7 +106,6 @@ body {
     background: var(--color-black);
     color: var(--color-white);
     text-align: center;
-
 }
 
 .container {
@@ -225,6 +232,7 @@ a {
     padding: var(--spacing-24-64);
     gap: 24px;
     border: 1px solid var(--color-border-gray);
+    flex-wrap: nowrap;
 }
 
 .info-item {
@@ -297,7 +305,7 @@ a {
     align-items: flex-start;
     gap: 16px;
     padding-bottom: var(--spacing-24);
-    width: 298px;
+    width: 100%;
 }
 
 .concept-block-box {
@@ -315,7 +323,6 @@ a {
     margin: auto;
 }
 
-/*border a lato non coincide */
 
 
 
@@ -383,29 +390,6 @@ a {
 .breakdownTabs:has(#breakdownTabs-item-check.is-selected)  .breakdownTabs-visual-check  {
     display: block; }
 
-
-
-.breakdownTabs:has(#breakdownTabs-item-study.is-selected) .breakdownTabs-visual-study {
-    display: block;
-    border: 0;
-    background: none;
-    color: inherit;
-    font: inherit;
-    text-align: left;
-    width: 100%;
-    cursor: pointer;
-
-    .breakdownTabs-button {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .breakdownTabs-item {}
-}
-
-
-
 .heading-text {
     font-size: var(--text-400-font-size);
     line-height: var(--text-400-line-height);
@@ -418,7 +402,6 @@ a {
     background-color: rgb(254, 242, 212);
     list-style: none;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     margin: 0;
     padding: 0 60px;
     gap: 40px;
@@ -429,21 +412,16 @@ a {
     background-color: pink;
     border-top: 2px solid var(--color-border-gray);
     margin-top: 16px;
-    max-width: 360px;
-    position relative;
+    max-width: 100%;
 }
+
 
 .breakdownTabs-item.is-selected {
     border-top: 2px solid var(--color-green-accent);
-    color: var(--color-black);
+}
 
-    .heading-text {
-        color: var(--color-black);
-    }
-
-    .breakdownTabs-text {
-        color: var(--color-black);
-    }
+.breakdownTabs-item:hover {
+    border-top: 2px solid var(--color-green-accent);
 }
 
 .breakdownTabs-button {
@@ -454,8 +432,22 @@ a {
     display: block;
     min-width: 0;
     color: var(--color-text-muted-light-mode);
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    box-sizing: border-box;
 }
+
+.breakdownTabs-button::before {
+    position: relative;
+}
+
+.breakdownTabs-button::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+} 
 
 .breakdownTabs-title {
     background-color: purple;
@@ -466,8 +458,8 @@ a {
 }
 
 .breakdownTabs-text {
-    margin: 0;
     padding-top: 15px;
+    max-width: unset;
 }
 
 .breakdownTabs-toggle {
@@ -483,29 +475,42 @@ a {
   outline-offset: 2px;
 }
 
+/* 
 
+em gap padding
+*/
 
 @media (min-width: 1000px) {
     .breakdownTabs-list {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         align-items: start;
         margin: auto;
         gap: 40px;
     }
 
-
-@media (max-width: 999px) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-    .breakdownTabs-button::after {
-        content: "";
-        position: absolute;
-        inset: 0;
+    .breakdownTabs-item.is-selected {
+    .heading-text {
+        color: var(--color-black);
+    }
+    .breakdownTabs-text {
+        color: var(--color-black);
     }
 }
+}
+
+
+@media (max-width: 999px) {
+    .breakdownTabs-toggle {
+        display: unset;
+    }
+
+    .heading-text {
+        color: var(--color-black);
+}
+}
+
+
 
     .breakdownTabs-visuals {
     padding: 60px;
@@ -546,7 +551,6 @@ a {
     }
 }
     
-
 .scheda svg {
     width: 20px;
     height: 20px;

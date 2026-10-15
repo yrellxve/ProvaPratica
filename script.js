@@ -62,36 +62,67 @@ desktopMedia.addEventListener('change', function () {
 
 
 
-/* ============ 4. JAVASCRIPT ============ */
+/* ============ 4. JAVASCRIPT ============  
+. - cerca dentro di te
+() - fallo ora, elementri all'interno sono info che dai
+=> - esegui questo
+= - capisci prima cosa c'è a destra, poi dove viene messo a sinistra
+*/
 
-/* const - crea una variabile ex. const x = 5; y = 3; 
-document.querySelectorAll('.scheda') significa "cerca nella pagina tutti gli elementi con la classe scheda". Il risultato è una lista di 3 bottoni, che salvo nella scatola chiamata 'schede'.
+/*
+const - crea una variabile ex. const x = 5; y = 3; come una scatola con etichetta che non cambierà piu
 
-const schede = document.querySelectorAll('.scheda');
-const pannelli = document.querySelectorAll('.systemstudy-imagepanel');
+querySelector è piu flessibile
+document.querySelector('.breakdownTabs-list') significa "cerca nella pagina l'elemento con quella classe". 
+il risultato è una lista di 3 bottoni, che salvo nella scatola chiamata 'tabs'.
 
-function attiva(indice) {
-  schede.forEach((scheda, i) => {
-    const scelta = (i === indice);
-    scheda.setAttribute('aria-selected', scelta);
-    scheda.tabIndex = scelta ? 0 : -1;
-  });
-  pannelli.forEach((pannello, i) => {
-    pannello.classList.toggle('active', i === indice);
-  });
-}
+poi dici dentro tabs cercami TUTTE le voci (querySelectorAll) e salvamele in 'items'
+*/
 
-schede.forEach((scheda, i) => {
-  scheda.addEventListener('click', () => attiva(i));
-  scheda.addEventListener('keydown', (evento) => {
-    let nuovo = null;
-    if (evento.key === 'ArrowRight') nuovo = (i + 1) % schede.length;
-    if (evento.key === 'ArrowLeft') nuovo = (i - 1 + schede.length) % schede.length;
-    if (nuovo !== null) {
-      attiva(nuovo);
-      schede[nuovo].focus();
-    }
+const tabs = document.querySelector('.breakdownTabs-list');
+const items = document.querySelectorAll('.breakdownTabs-item');
+
+
+/*
+Element.classList - gestisce le classi come una semplice stringa di testo
+classList - lista delle classi dell'elemento
+.add('...') - aggiungi questa classe all'html
+->> contenitore diventa class="breakdownTabs breakdownTabs-ready"
+*/
+
+tabs.classList.add('breakdownTabs-ready');
+
+
+/* prendi lista items e per ognuno
+trova il suo button e crea la sua scatola chiamata 'button' */
+
+items.forEach(item => { 
+  const button = item.querySelector('.breakdownTabs-button');
+
+/*
+addEventListener - ascolta, gli dici cosa aspettare ('click') e cosa fare quando succede () => {...}
+non dice subito quello che c'è dentro. lo mette da parte e lo esegue solo quando qualcuno lo clicca.
+*/
+
+  button.addEventListener('click', () => {
+    items.forEach(other => { 
+      const isOpen = other === item; /* per ognun click, verifica other è esattamente la stessa cosa di item?
+      ->> risposta è 'true' o 'false'. questo risultato viene messo nella scatola 'isOpen'
+      */
+
+      other.classList.toggle('is-selected', isOpen); 
+      other.querySelector('.breakdownTabs-button')
+           .setAttribute('aria-expanded', isOpen);
+    });
   });
 });
+
+
+
+
+
+/* 
+
+NodeList
 
 */
