@@ -696,7 +696,18 @@ align-items: center;
 
 }
 
-
+.casestudy-caption {
+    font-size: 14px;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+    letter-spacing: 0.21px;
+    color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--spacing-24-64);
+    border-top: 1px solid var(--color-border-gray);
+}
 
 
 
@@ -749,13 +760,19 @@ align-items: center;
     padding: var(--spacing-64);
 }
 
-
-
+.border-block {
+    padding: 60px 61px 80px 61px;
+    border: 1px solid var(--color-border-gray);
+}
 
 .breakdownTabs-visual {
     display: none;
     width: 100%;
     height: auto;
+}
+
+.breakdownTabs-content {
+    padding-bottom: var(--spacing-24);
 }
 
 .breakdownTabs:has(#breakdownTabs-item-study.is-selected)  .breakdownTabs-visual-study  {
@@ -778,7 +795,6 @@ align-items: center;
     list-style: none;
     display: grid;
     margin: 0;
-    padding: 0 60px;
     gap: 40px;
 }
 
@@ -850,10 +866,6 @@ align-items: center;
   outline-offset: 2px;
 }
 
-/* 
-
-em gap padding
-*/
 
 @media (min-width: 1000px) {
     .breakdownTabs-list {
@@ -884,12 +896,6 @@ em gap padding
         color: var(--color-black);
 }
 }
-
-
-
-    .breakdownTabs-visuals {
-    padding: 60px;
-  }
 
   .breakdownTabs-ready .breakdownTabs-item:not(.is-selected) .breakdownTabs-text {
     display: block;
@@ -939,15 +945,67 @@ em gap padding
 
 */
 
+.footer {
+    background-color: var(--color-black);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
+.footer-textmono {
+    color: var(--color-text-muted);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: var(--font-weight-normal);
+    line-height: 1.5;
+    letter-spacing: 0.21px;
+}
 
+.footer-text {
+    color: var(--color-white);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.5;
+    letter-spacing: 0.21px;
+}
 
+.footer-mono-links {
+    display: flex;
+    gap: 20px;
+}
 
+.arrow-up {
+    color: var(--color-white);
+    padding: 13px;
+}
 
+.back-to-top {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
 
+.footer-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    padding: 32px;
+}
 
-
+.copyright {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 32px;
+}
 
 
 
