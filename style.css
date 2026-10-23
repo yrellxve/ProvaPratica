@@ -40,12 +40,14 @@
     --color-focus: #E889BC;
     --color-button-secondary-bg: #FFFFFF1F;
     --color-button-secondary-border: #FFFFFF99;
+    --color-link-accent: #A2DAFF;
     --container-width: 1280px;
     --hero-content-gap: 1em;
     --spacing-64: 64px;
     --spacing-24-64: 24px 64px 24px 64px;
     --spacing-24: 24px;
     --spacing-48: 48px;
+    --spacing-96-64: 96px 64px 96px 64px;
     --button-font-size: 16px;
     --eyebrow-font-size: 14px;
     --heading-font-size-1: 56px;
@@ -59,6 +61,7 @@
     --text-200-line-height: 1.5;
     --text-100-font-size: 0.875em;
     --text-100-line-height: 1.5;
+    --font-weight-normal: 400;
     --font-weight-medium: 500;
     --font-weight-semibold: 550;
     --border-width: 1px;
@@ -177,6 +180,7 @@ body {
 .button-group {
     display: flex;
     gap: 1em;
+    flex-wrap: nowrap;
 }
 
 .hero-image {
@@ -199,6 +203,7 @@ a {
     font-family: var(--font-body);
     font-size: var(--button-font-size);
     transition: background-color 300ms ease-in-out;
+    cursor: pointer;
 }
 
 .button:focus-visible {
@@ -517,10 +522,12 @@ a {
     color: var(--color-white);
     border-left: 1px solid var(--color-border-muted);
     border-right: 1px solid var(--color-border-muted);
+    padding: var(--spacing-64);
+    gap: 16px;
 }
 
 .prototypes-intro {
-    padding: calc(var(--spacing-24) + var(--spacing-64));
+    padding: var(--spacing-64);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -530,7 +537,9 @@ a {
 }
 
 .prototypes-button-group {
-
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-24);
 }
 
 .prototype-button {
@@ -550,7 +559,145 @@ a {
     border-width: 0px 0px 2px 0px;
 }
 
-.prototype-button:
+.prototypes-image-description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+    align-items: flex-start;
+}
+
+.linked-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.24px;
+    color: var(--color-link-accent);
+    cursor: pointer;
+}
+
+.prototypes-image {
+    min-width: 0;
+    align-content: flex-start;
+}
+
+.prototypes-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.prototypes-preview {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    justify-content: center;
+    gap: var(--spacing-48);
+}
+
+.prototypes-previewtab {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+@media (max-width: 999px) {
+    .prototypes-preview {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .prototypes-button-group {
+        justify-content: flex-start;
+    }
+}
+
+.highlights-intro {
+    padding: calc(var(--spacing-24) + var(--spacing-64));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 16px;
+}
+
+.highlights-image-description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.highlights-image {
+    min-width: 0;
+    align-content: center;
+}
+
+.highlights-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.text-color-default-18.muted-light-mode {
+    color: var(--color-text-muted-light-mode);
+}
+
+.highlights-image-content {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--spacing-64);
+    padding: var(--spacing-64);
+    padding-top: 0px;
+}
+
+#project {
+    background-color: var(--color-black);
+    
+}
+
+.enter-banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--color-white);
+    border-left: 1px solid var(--color-border-muted);
+    border-right: 1px solid var(--color-border-muted);
+    padding: var(--spacing-96-64);
+    gap: 1em;
+}
+
+.enter-banner-text {
+    gap: 16px;
+}
+
+.heading-font-size-5 {
+    font-size: 40px;
+    font-weight: var(--font-weight-medium);
+    line-height: 1.2;
+}
+
+@media (max-width: 999px) {
+    .project.button-group {
+        display: flex;
+padding-top: 16px;
+flex-direction: column;
+align-items: center;
+    }
+}
+
+@media (max-width: 375px) {
+    .button {
+        display: flex;
+        width: 100%;
+        justify-content: center
+    }
+
+}
+
+
+
 
 
 
