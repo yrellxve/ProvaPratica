@@ -61,8 +61,7 @@ desktopMedia.addEventListener('change', function () {
 });
 
 
-
-/* ============ 4. JAVASCRIPT ============  
+/* ============ JAVASCRIPT ============  
 . - cerca dentro di te
 () - fallo ora, elementri all'interno sono info che dai
 => - esegui questo
@@ -110,19 +109,10 @@ non dice subito quello che c'è dentro. lo mette da parte e lo esegue solo quand
       ->> risposta è 'true' o 'false'. questo risultato viene messo nella scatola 'isOpen'
       */
 
-      other.classList.toggle('is-selected', isOpen); 
+      other.classList.toggle('is-selected', isOpen); /* toggle - "interruttore" che con un secondo valore diventa preciso: mette la classe se è true, la toglie se è false. risultato - voce cliccata riceve la stella, le altre la perdono */
       other.querySelector('.breakdownTabs-button')
-           .setAttribute('aria-expanded', isOpen);
+           .setAttribute('aria-expanded', isOpen); /* trova pulsante di quella voce e cambia attributo di aria-expanded in true o false */
     });
   });
 });
 
-
-
-
-
-/* 
-
-NodeList
-
-*/
